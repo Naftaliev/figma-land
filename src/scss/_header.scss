@@ -1,3 +1,51 @@
 header {
-    width: 800px;
+    position: relative;
+    top: 0px;
+    padding-top: 33px;
+    background-color: #181818;
+    color: azure;
+    .logo {
+        width: 186px;
+    } 
+    .navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    width: 100%;
+    justify-content: space-between;
+        li {
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 24px;
+            text-align: center;
+            letter-spacing: 0.2px;
+        }
+    }
+    nav {
+        width: 60%;
+        align-items: center;
+        justify-content: space-between;
+        padding-left: 10%;
+        padding-right: 10%;
+        ul {
+            display: flex;
+            width: 100%;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+    .btn-login {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 20px 36px;
+        align-items: center;
+        height: 52px;
+        width: 139px;
+        border: 1px solid #FFFFFF;
+        a {
+        text-decoration: none;
+        color:azure;}
+    }
 }
