@@ -1,8 +1,9 @@
-@import 'header';
+
+@use './header/header';
 
 .container-main {
     width: 1579px;
-    padding: 0 20% 20%;
+    padding: 0 17% 17%;
     background-color: #181818;
 }
 
