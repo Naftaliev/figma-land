@@ -1,13 +1,15 @@
-@use '../utils';
+@use './utils';
 
 header {
     position: relative;
     top: 0px;
+    font-family: utils.$roboto;
+    height: 119px;
     padding-top: 33px;
-    background-color: #181818;
-    color: azure;
+    background-color: utils.$background;
+    color: utils.$type;
     .logo {
-        width: 186px;
+        max-width: 186px;
     } 
     .navbar {
     display: flex;
@@ -17,13 +19,15 @@ header {
     width: 100%;
     justify-content: space-between;
         li {
-            font-weight: 500;
+            size: 16px;
+            font-weight: 400;
             font-size: 16px;
             line-height: 24px;
             text-align: center;
             letter-spacing: 0.2px;
         }
     }
+
     nav {
         width: 60%;
         align-items: center;
@@ -37,18 +41,6 @@ header {
             justify-content: space-between;
         }
     }
-    .btn-login {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        padding: 20px 36px;
-        align-items: center;
-        height: 52px;
-        width: 139px;
-        border: 1px solid #FFFFFF;
-        a {
-        text-decoration: none;
-        color:azure;}
-    }
-}
-z
+
+    
+};

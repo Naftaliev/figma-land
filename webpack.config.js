@@ -52,6 +52,10 @@ const CONFIG = {
         to: "images/",
       },
       {
+        from: "src/fonts/",
+        to: "fonts/",
+      },
+      {
         from: "src/*.txt",
         to: "./[name].[ext]",
         toType: "template",
@@ -105,6 +109,14 @@ const CONFIG = {
           },
         ],
       },
+      {
+				test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+				loader: 'file-loader',
+				options: {
+					name: '[name].[ext]',
+          outputPath: 'fonts/'
+				}
+			},
     ],
   },
   devServer: {
