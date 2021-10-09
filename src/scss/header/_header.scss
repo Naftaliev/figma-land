@@ -1,0 +1,46 @@
+@use './utils';
+
+header {
+    position: relative;
+    top: 0px;
+    font-family: utils.$roboto;
+    height: 119px;
+    padding-top: 33px;
+    background-color: utils.$background;
+    color: utils.$type;
+    .logo {
+        max-width: 186px;
+    } 
+    .navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    width: 100%;
+    justify-content: space-between;
+        li {
+            size: 16px;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 24px;
+            text-align: center;
+            letter-spacing: 0.2px;
+        }
+    }
+
+    nav {
+        width: 60%;
+        align-items: center;
+        justify-content: space-between;
+        padding-left: 10%;
+        padding-right: 10%;
+        ul {
+            display: flex;
+            width: 100%;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+
+    
+};
