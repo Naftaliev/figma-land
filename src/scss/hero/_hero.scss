@@ -13,21 +13,20 @@
     margin-top: 40px;
     display: flex;
 
-    > *:nth-child(2) {
+    > *:nth-child(1) {
         background-color: utils.$button-blue;
-        margin-left: 20px;
+        margin-right: 25px;
     }
 
 }
 //элемент с изображениями и градиентом
-.shitshow {
+.triple {
     position: static;
     left: 0%;
     right: 0%;
     top: 40.72%;
     bottom: 0%;
 
-    //лунная призма дай мне сил
 
     //элемент с изображениями
     .screens {

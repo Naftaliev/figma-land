@@ -1,6 +1,7 @@
 @use './utils';
 @use './header/header';
 @use './hero/hero';
+@use './features/features';
 
 
 .container-main {
@@ -19,6 +20,12 @@ h1 {
     font-family: utils.$roboto, sans-serif;
     font-weight: 500;
 }
+
+h3 {
+    font-family: Roboto;
+    font-weight: 400;
+    font-size: 52px;
+  }
 
 h4 {
     font-size: 20px;
@@ -48,6 +55,13 @@ h4 {
         
     }
 }
+
+.spacer {
+    display: block;
+    position: relative;
+    height: 20px;
+}
+
 
 footer {
     padding-top: 100px;
