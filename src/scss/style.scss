@@ -3,10 +3,16 @@
 @use './hero/hero';
 @use './features/features';
 
+body {
+    background-color: #181818;
+
+}
+
 
 .container-main {
     width: 1579px;
-    padding: 0 17% 17%;
+    margin-right: auto;
+    margin-left: auto;
     background-color: #181818;
 };
 
@@ -17,19 +23,19 @@ a, li, h1, h2, h3, h4 {
 
 h1 {
     font-size:80px;
-    font-family: utils.$roboto, sans-serif;
+    font-family: utils.$graphik, sans-serif;
     font-weight: 500;
 }
 
 h3 {
-    font-family: Roboto;
+    font-family: utils.$graphik;
     font-weight: 400;
     font-size: 52px;
   }
 
 h4 {
     font-size: 20px;
-    font-family: utils.$roboto, sans-serif;
+    font-family: utils.$graphik, sans-serif;
     font-weight: 500;
 }
 
@@ -45,15 +51,14 @@ h4 {
     border: 1px solid #FFFFFF;
     text-decoration: none;
     color: utils.$type;
+    font-family: utils.$graphik;
     padding: 10px;
 
     &-login{
         @extend .button;
     }
 
-    a {
-        
-    }
+    
 }
 
 .spacer {
