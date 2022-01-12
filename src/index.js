@@ -1,5 +1,6 @@
 import './styles/index.scss'
 import $ from "jquery";
+import img from './images/logo.png';
 // import 'bootstrap';
 
 const userStack = {

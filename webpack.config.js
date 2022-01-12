@@ -34,6 +34,17 @@ module.exports = {
     module: {
         rules: [
             {
+                test: /\.(png|jpg|gif)$/i,
+                use: [
+                  {
+                    loader: "url-loader",
+                    options: {
+                      encoding: true,
+                    },
+                  },
+                ],
+            },
+            {
             test: /\.html$/i,
             loader: "html-loader",
             },
