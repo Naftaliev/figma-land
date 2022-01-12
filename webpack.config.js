@@ -1,144 +1,89 @@
-const path = require("path");
-const webpack = require("webpack");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
-const HtmlReplaceWebpackPlugin = require("html-replace-webpack-plugin");
-const CopyWebpackPlugin = require("copy-webpack-plugin");
-const ImageminPlugin = require("imagemin-webpack-plugin").default;
-const MinifyPlugin = require("babel-minify-webpack-plugin");
 
-const devMode = process.env.NODE_ENV !== "production";
-
-const CONFIG = {
-  entry: "./src/js/app.js",
-  mode: process.env.NODE_ENV,
-  devtool: "cheap-module-source-map",
-  output: {
-    path: path.resolve(__dirname, "./build"),
-    filename: "app.js",
-  },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: "./src/index.html",
-      filename: "./index.html",
-      minify: {
-        collapseWhitespace: true,
-        minifyCSS: true,
-        removeComments: true,
-      },
-    }),
-    new HtmlReplaceWebpackPlugin([
-      {
-        pattern:
-          '<script type="text/javascript" src="../build/app.js"></script>',
-        replacement: "",
-      },
-      {
-        pattern: '<link rel="stylesheet" href="./css/app.css">',
-        replacement: "",
-      },
-    ]),
-    new MiniCssExtractPlugin({
-      filename: devMode ? "[name].css" : "[name].[hash].css",
-      chunkFilename: devMode ? "[id].css" : "[id].[hash].css",
-    }),
-    new OptimizeCssAssetsPlugin({
-      cssProcessorOptions: { discardComments: { removeAll: true } },
-    }),
-    new CopyWebpackPlugin([
-      {
-        from: "src/images/",
-        to: "images/",
-      },
-      {
-        from: "src/fonts/",
-        to: "fonts/",
-      },
-      {
-        from: "src/*.txt",
-        to: "./[name].[ext]",
-        toType: "template",
-      },
-    ]),
-    new ImageminPlugin({
-      disable: devMode,
-      test: /\.(jpe?g|png|gif|svg)$/i,
-      optipng: { optimizationLevel: 3 },
-      jpegtran: { progressive: true },
-      gifsicle: { optimizationLevel: 1 },
-      svgo: {},
-    }),
-  ],
-  module: {
-    rules: [
-      {
-        test: /\.(css|scss)$/i,
-        use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-            // options: {
-            //   hmr: devMode,
-            // },
-          },
-          {
-            loader: "css-loader",
-            options: {
-              sourceMap: true,
-              importLoaders: 2,
-            },
-          },
-          {
-            loader: "postcss-loader",
-            options: {
-              sourceMap: true,
-            },
-          },
-          {
-            loader: "sass-loader",
-            options: { sourceMap: true },
-          },
-        ],
-      },
-      {
-        test: /\.(png|jpg|gif)$/,
-        use: [
-          {
-            loader: "file-loader",
-            options: {},
-          },
-        ],
-      },
-      {
-				test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
-				loader: 'file-loader',
-				options: {
-					name: '[name].[ext]',
-          outputPath: 'fonts/'
-				}
-			},
-    ],
-  },
-  devServer: {
-    contentBase: path.join(__dirname, "src"),
-    compress: true,
-    port: 3001,
-    hot: true,
-    watchContentBase: true,
-    noInfo: true,
-  },
-};
-
-if (!devMode) {
-  CONFIG.output.publicPath = "./";
-  CONFIG.output.filename = "js/app.js";
-  CONFIG.plugins.push(new MinifyPlugin());
-  CONFIG.module.rules.push({
-    test: [/\.js$/],
-    exclude: [/node_modules/],
-    loader: "babel-loader",
-    options: { presets: ["env"] },
-  });
+let mode = 'development'
+if (process.env.NODE_ENV === 'production') {
+    mode = 'production'
 }
+console.log(mode + ' mode')
 
-module.exports = CONFIG;
+module.exports = {
+    mode: mode,
+    entry: {
+        scripts: './src/index.js',
+        user: './src/user.js',
+    },
+    output: {
+        filename: '[name].[contenthash].js',
+        assetModuleFilename: "assets/[hash][ext][query]",
+        clean: true,
+    },
+    devtool: 'source-map',
+    optimization: {
+        splitChunks: {
+            chunks: 'all',
+        },
+    },
+    plugins: [
+        new MiniCssExtractPlugin({
+            filename: '[name].[contenthash].css'
+        }),
+        new HtmlWebpackPlugin({
+            template: "./src/index.pug"
+        })],
+    module: {
+        rules: [
+            {
+            test: /\.html$/i,
+            loader: "html-loader",
+            },
+            {
+                test: /\.(sa|sc|c)ss$/,
+                use: [
+                    (mode === 'development') ? "style-loader" : MiniCssExtractPlugin.loader,
+                    "css-loader",
+                    {
+                        loader: "postcss-loader",
+                        options: {
+                            postcssOptions: {
+                                plugins: [
+                                    [
+                                        "postcss-preset-env",
+                                        {
+                                            // Options
+                                        },
+                                    ],
+                                ],
+                            },
+                        },
+                    },
+                    "sass-loader",
+                ],
+            },
+            {
+                test: /\.(png|svg|jpg|jpeg|gif)$/i,
+                type: 'asset/resource',
+            },
+            {
+                test: /\.(woff|woff2|eot|ttf|otf)$/i,
+                type: 'asset/resource',
+                
+            },
+            {
+                test: /\.pug$/,
+                loader: 'pug-loader',
+                exclude: /(node_modules|bower_components)/,
+            },
+            {
+                test: /\.m?js$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-env']
+                    }
+                }
+            }
+        ]
+    },
+}
