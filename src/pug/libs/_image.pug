@@ -1,2 +1,14 @@
 mixin image(name)
-    img.src(src=`../src/images/${name}.png` alt=name)
+    img(src=require(`./${name}.png`) alt=name)
+
+mixin image-common(name)
+    img(src=require(`_src/images/${name}.png`) alt=name)
+
+mixin image-jpg(name)
+    img(src=require(`./${name}.jpg`) alt=name)
+
+mixin image-common-jpg(name)
+    img(src=require(`_src/images/${name}.jpg`) alt=name)
+
+mixin image-svg(name)
+    img(src=require(`./${name}.svg`) alt=name)

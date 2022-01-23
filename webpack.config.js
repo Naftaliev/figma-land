@@ -1,5 +1,5 @@
+const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 let mode = 'development'
 if (process.env.NODE_ENV === 'production') {
@@ -8,93 +8,69 @@ if (process.env.NODE_ENV === 'production') {
 console.log(mode + ' mode')
 
 module.exports = {
-    mode: mode,
-    entry: {
-        scripts: './src/index.js',
-        user: './src/user.js',
+  mode: mode, 
+  entry: {
+    main: path.resolve(__dirname, 'src/index.js'),
+  },
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: '[name].[contenthash].js',
+    assetModuleFilename: "assets/[hash][ext]",
+    clean: true,
+  },
+  devtool: 'inline-source-map',
+  devServer: {
+    compress: true,
+    port: 9000,
+  },
+  resolve: {
+    alias: {
+      _src: path.resolve(__dirname, 'src/'),
     },
-    output: {
-        filename: '[name].[contenthash].js',
-        assetModuleFilename: "assets/[hash][ext][query]",
-        clean: true,
-    },
-    devtool: 'source-map',
-    optimization: {
-        splitChunks: {
-            chunks: 'all',
+  },
+  //loaders
+  module: {
+    rules: [
+      //html
+      {
+        test: /\.html$/i,
+        loader: "html-loader",
         },
-    },
-    plugins: [
-        new MiniCssExtractPlugin({
-            filename: '[name].[contenthash].css'
-        }),
-        new HtmlWebpackPlugin({
-            template: "./src/index.pug"
-        })],
-    module: {
-        rules: [
-            // {
-            //     test: /\.(png|jpg|gif)$/i,
-            //     use: [
-            //       {
-            //         loader: "url-loader",
-            //         options: {
-            //           encoding: true,
-            //         },
-            //       },
-            //     ],
-            // },
-            {
-            test: /\.html$/i,
-            loader: "html-loader",
-            },
-            {
-                test: /\.(sa|sc|c)ss$/,
-                use: [
-                    (mode === 'development') ? "style-loader" : MiniCssExtractPlugin.loader,
-                    "css-loader",
-                    {
-                        loader: "postcss-loader",
-                        options: {
-                            postcssOptions: {
-                                plugins: [
-                                    [
-                                        "postcss-preset-env",
-                                        {
-                                            // Options
-                                        },
-                                    ],
-                                ],
-                            },
-                        },
-                    },
-                    "sass-loader",
-                ],
-            },
-            {
-                test: /\.(png|svg|jpg|jpeg|gif)$/i,
-                type: 'asset/resource',
-            },
-            {
-                test: /\.(woff|woff2|eot|ttf|otf)$/i,
-                type: 'asset/resource',
-                
-            },
-            {
-                test: /\.pug$/,
-                loader: 'pug-loader',
-                exclude: /(node_modules|bower_components)/,
-            },
-            {
-                test: /\.m?js$/,
-                exclude: /node_modules/,
-                use: {
-                    loader: 'babel-loader',
-                    options: {
-                        presets: ['@babel/preset-env']
-                    }
-                }
-            }
-        ]
-    },
-}
+      //css
+      { test: /\.css$/, use: ['style-loader', 'css-loader'] },
+      //sass/scss
+      {
+        test: /\.(sa|sc)ss$/,
+        loader: "sass-loader",
+      },
+      //images
+      { test: /\.(svg|ico|png|webp|jpg|gif|jpeg)$/, type: 'asset/resource' },
+      //js for babel
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env'],
+          },
+        },
+      },
+      {
+        test: /\.pug$/,
+        loader: 'pug-loader',
+        // loader: 'pug-html-loader',
+        // options: {
+        //   exports: false
+        // },
+        exclude: /(node_modules|bower_components)/,
+      },
+    ],
+  },
+  //plugins
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: "src/index.pug",
+    }),
+  ],
+};
