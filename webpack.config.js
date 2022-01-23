@@ -37,11 +37,28 @@ module.exports = {
         loader: "html-loader",
         },
       //css
-      { test: /\.css$/, use: ['style-loader', 'css-loader'] },
-      //sass/scss
       {
-        test: /\.(sa|sc)ss$/,
-        loader: "sass-loader",
+        test: /\.(sa|sc|c)ss$/,
+        use: [
+            (mode === 'development') ? "style-loader" : MiniCssExtractPlugin.loader,
+            "css-loader",
+            {
+                loader: "postcss-loader",
+                options: {
+                    postcssOptions: {
+                        plugins: [
+                            [
+                                "postcss-preset-env",
+                                {
+                                    // Options
+                                },
+                            ],
+                        ],
+                    },
+                },
+            },
+            "sass-loader",
+        ],
       },
       //images
       { test: /\.(svg|ico|png|webp|jpg|gif|jpeg)$/, type: 'asset/resource' },
