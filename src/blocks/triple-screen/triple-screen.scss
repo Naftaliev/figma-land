@@ -1,0 +1,105 @@
+@use 'src/styles/utils';
+
+
+.triple-screen {
+    position: static;
+    height: 1675px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+}
+
+.triple-screen__button-row {
+    margin-top: 40px;
+    display: flex;
+
+    > *:nth-child(1) {
+        background-color: utils.$button-blue;
+        border: none;
+        margin-right: 25px;
+    }
+
+}
+//элемент с изображениями и градиентом
+.triple-screen__images-container{
+    position: static;
+    left: 0%;
+    right: 0%;
+    top: 40.72%;
+    bottom: 0%;
+
+
+    //элемент с изображениями
+    .triple-screen__images {
+
+        position: absolute;
+        width: 1552.02px;
+        height: 841px;
+        left: 13.49px;
+        top: 682px;
+
+        .triple-screen__img-top {
+            position: absolute;
+            width: 465.82px;
+            height: 429.98px;
+            left: calc(50% - 465.82px/2 - 131.92px);
+            top: calc(50% - 429.98px/2 + 76.72px);
+            // left: calc(50% - 465.82px/2 - 131.92px);
+            // top: calc(50% - 429.98px/2 + 76.72px);
+            background-image: url("../images/triple-top.png");
+        }
+
+
+        .triple-screen__img-top {
+            position: absolute;
+            width: 466.53px;
+            height: 429.98px;
+            left: calc(50% - 466.53px/2 - 480.67px);
+            top: calc(50% - 429.98px/2 + 380px);
+            // left: calc(50% - 466.53px/2 - 146.67px);
+            // top: calc(50% - 429.98px/2 + 92.31px);
+            background-image: url("../images/triple-left.png");
+        }
+
+        .triple-screen__img-top {
+            position: absolute;
+            width: 466.53px;
+            height: 429.98px;
+            left: calc(50% - 466.53px/2 + 230px);
+            top: calc(50% - 451.48px/2 + 380px);
+            // left: calc(50% - 466.53px/2 + 584px);
+            // top: calc(50% - 451.48px/2 + 76.47px);
+            background-image: url("../images/triple-right.png");
+        }
+
+
+            // .img-top {
+            //     position: relative;
+            //     width: 465.82px;
+            //     height: 429.98px;
+            // }
+
+
+            // .img-left {
+            //     position: relative;
+            //     width: 466.53px;
+            //     height: 429.98px;
+            // }
+
+            // .img-right {
+            //     position: relative;
+            //     width: 466.53px;
+            //     height: 429.98px;
+            // }
+
+    }
+}
+// .gradient {
+//     position: absolute;
+//     left: 0%;
+//     right: 0%;
+//     top: 67.1%;
+//     bottom: 0%;
+//     background: utils.$background-gradient;
+// }

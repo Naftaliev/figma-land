@@ -1,0 +1,21 @@
+.button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 36px;
+    align-items: center;
+    height: 52px;
+    width: 139px;
+    border: 1px solid #FFFFFF;
+    text-decoration: none;
+    color: utils.$type;
+    font-family: utils.$graphik;
+    padding: 10px;
+
+    &-login{
+        @extend .button;
+    }
+
+    
+}

@@ -1,5 +1,5 @@
-mixin image(name)
-    img(src=require(`./${name}.png`) alt=name)
+mixin image(pathAndName)
+    img(src=require(`_src/blocks/${pathAndName}.png`) alt=name)
 
 mixin image-common(name)
     img(src=require(`_src/images/${name}.png`) alt=name)
