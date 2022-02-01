@@ -1,12 +1,12 @@
 
 @font-face {
     font-family: 'Graphik';
-    src: url('../fonts/Graphik/Graphik-Medium.eot');
-    src: local('../fonts/Graphik/Graphik Medium'), local('Graphik-Medium'),
-        url('../fonts/Graphik/Graphik-Medium.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/Graphik/Graphik-Medium.woff2') format('woff2'),
-        url('../fonts/Graphik/Graphik-Medium.woff') format('woff'),
-        url('../fonts/Graphik/Graphik-Medium.ttf') format('truetype');
+    src: url('_src/fonts/Graphik/Graphik-Medium.eot');
+    src: local('_src/fonts/Graphik/Graphik Medium'), local('Graphik-Medium'),
+        url('_src/fonts/Graphik/Graphik-Medium.eot?#iefix') format('embedded-opentype'),
+        url('_src/fonts/Graphik/Graphik-Medium.woff2') format('woff2'),
+        url('_src/fonts/Graphik/Graphik-Medium.woff') format('woff'),
+        url('_src/fonts/Graphik/Graphik-Medium.ttf') format('truetype');
     font-weight: 500;
     font-style: normal;
 }

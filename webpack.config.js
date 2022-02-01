@@ -65,6 +65,8 @@ module.exports = {
       },
       //images
       { test: /\.(svg|ico|png|webp|jpg|gif|jpeg)$/, type: 'asset/resource' },
+      //fonts
+      { test: /\.(woff|eot|ttf|woff2)$/, type: 'asset/resource' },
       //js for babel
       {
         test: /\.js$/,
