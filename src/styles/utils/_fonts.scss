@@ -1,5 +1,5 @@
 @import url('_src/fonts/Roboto.scss');
 @import url('_src/fonts/Graphik/font-face-graphik.scss');
 
-$roboto: Roboto;
-$graphik: Graphik;
+
+$graphik: Graphik, Roboto, sans-serif;

@@ -1,0 +1,22 @@
+.whitecards {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.whitecard {
+    position: relative;
+    display: block;
+    max-width: 50%;
+    font-weight: 200;
+        a {
+            font-weight: 300;
+        }
+}
+
+.whitecard__left {
+    a {
+        font-weight: 500;
+    }
+}
