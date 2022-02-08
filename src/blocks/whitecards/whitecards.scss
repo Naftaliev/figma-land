@@ -1,7 +1,9 @@
+@use '_src/styles/utils';
+
 .whitecards {
     position: relative;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-around;
 }
 
@@ -9,14 +11,13 @@
     position: relative;
     display: block;
     max-width: 50%;
-    font-weight: 200;
-        a {
-            font-weight: 300;
-        }
+    font-weight: 500;
+    font-family: utils.$graphik;
+        
 }
 
-.whitecard__left {
-    a {
-        font-weight: 500;
-    }
+.whitecard--left {
+    font-weight: 700;
+    font-family: utils.$graphik;
+    
 }

@@ -5,58 +5,12 @@ body {
 
 }
 
-
 .container-main {
     width: 1579px;
     margin-right: auto;
     margin-left: auto;
     background-color: #181818;
 };
-
-a, li, h1, h2, h3, h4 {
-    color: utils.$type;
-    text-decoration: none;
-}
-
-h1 {
-    font-size:80px;
-    font-family: utils.$graphik;
-    font-weight: 200;
-}
-
-h3 {
-    font-family: utils.$graphik;
-    font-weight: 400;
-    font-size: 52px;
-  }
-
-h4 {
-    font-size: 20px;
-    font-family: utils.$graphik;
-    font-weight: 500;
-}
-
-.button {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    padding: 20px 36px;
-    align-items: center;
-    height: 52px;
-    width: 139px;
-    border: 1px solid #FFFFFF;
-    text-decoration: none;
-    color: utils.$type;
-    font-family: utils.$graphik;
-    padding: 10px;
-
-    &-login{
-        @extend .button;
-    }
-
-    
-}
 
 .spacer {
     display: block;
@@ -68,4 +22,27 @@ h4 {
 footer {
     padding-top: 100px;
     margin: 60px;
+}
+
+// TYPOGRAPHY
+
+a, li, h1, h2, h3, h4 {
+    color: utils.$type;
+    text-decoration: none;
+}
+
+h1 {
+    font-size:80px;
+    font-family: utils.$graphik;
+}
+
+h3 {
+    font-family: utils.$graphik;
+    font-size: 52px;
+    
+  }
+
+h4 {
+    font-size: 20px;
+    font-family: utils.$graphik;
 }
