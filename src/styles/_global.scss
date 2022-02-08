@@ -12,6 +12,12 @@ body {
     background-color: #181818;
 };
 
+.container-centered {
+    display: flex;
+    align-items: center; 
+    justify-content: space-around;
+};
+
 .spacer {
     display: block;
     position: relative;
@@ -27,7 +33,7 @@ footer {
 // TYPOGRAPHY
 
 a, li, h1, h2, h3, h4 {
-    color: utils.$type;
+    color: inherit;
     text-decoration: none;
 }
 
