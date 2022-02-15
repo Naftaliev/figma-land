@@ -2,6 +2,7 @@
 
 body {
     background-color: #181818;
+    color: white;
 
 }
 
@@ -30,25 +31,3 @@ footer {
     margin: 60px;
 }
 
-// TYPOGRAPHY
-
-a, li, h1, h2, h3, h4 {
-    color: inherit;
-    text-decoration: none;
-}
-
-h1 {
-    font-size:80px;
-    font-family: utils.$graphik;
-}
-
-h3 {
-    font-family: utils.$graphik;
-    font-size: 52px;
-    
-  }
-
-h4 {
-    font-size: 20px;
-    font-family: utils.$graphik;
-}
