@@ -30,7 +30,7 @@ h3 {
     margin: 0px 10px;
 }
 //title
-p.type__title {
+p.title {
     font-family: $graphik;
     font-weight: 500;
     font-size: 20px;
@@ -45,27 +45,24 @@ h2 {
     font-size: 20px;
     line-height: 30px;
     letter-spacing: 0.2px;
-    color: #5C5C5C;
 
     margin: 0px 10px;
 }
 //button
-p.type__button  {
+p.button  {
     font-family: $graphik;
     font-weight: 500;
     font-size: 17px;
     line-height: 25px;
     letter-spacing: 0.2px;
-    color: black;
 }
 //subtitle
-p.type__subtitle {
+p.subtitle {
     font-family: $graphik;
     font-weight: 500;
     font-size: 16px;
     line-height: 24px;
     letter-spacing: 0.1px;
-    color: #5C5C5C;
 }
 // paragraphe
 p {
@@ -73,7 +70,6 @@ p {
     font-size: 16px;
     line-height: 24px;
     letter-spacing: 0.2px;
-    color: #5C5C5C;
 }
 //link
 a {
@@ -83,11 +79,10 @@ a {
     letter-spacing: 0.2px;
 }
 //Mobile menu
-p.type__mobileMenu {
+p.mobileMenu {
     font-family: $graphik;
     font-weight: normal;
     font-size: 30px;
     line-height: 45px;
     letter-spacing: 0.2px;
-    color:black;
 }
