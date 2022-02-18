@@ -2,17 +2,23 @@
 
 
 .triple-screen {
-    position: static;
-    height: 1675px;
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 0px;
     margin-top: 20px;
 
-    h1 {
-        margin-bottom: 20px;;
-    }
+   
+}
+
+.triple-screen__h1 {
+    margin-top: 30px;
+    margin-bottom: 60px;
+}
+
+.triple-screen__h2 {
+    margin-bottom: 30px;
 }
 
 .triple-screen__button-row {
@@ -26,85 +32,55 @@
     }
 
 }
-//элемент с изображениями и градиентом
+
+//элемент с изображениями
+
 .triple-screen__images-container{
-    position: static;
-    left: 0%;
-    right: 0%;
-    top: 40.72%;
-    bottom: 0%;
-
-
-    //элемент с изображениями
-    .triple-screen__images {
-
-        position: absolute;
+    position: relative;
         width: 1552.02px;
-        height: 841px;
-        left: 13.49px;
-        top: 682px;
-
-        .triple-screen__img-top {
-            position: absolute;
-            width: 465.82px;
-            height: 429.98px;
-            left: calc(50% - 465.82px/2 - 131.92px);
-            top: calc(50% - 429.98px/2 + 76.72px);
-            // left: calc(50% - 465.82px/2 - 131.92px);
-            // top: calc(50% - 429.98px/2 + 76.72px);
-            background-image: url("../images/triple-top.png");
-        }
+        height: 920px;
 
 
-        .triple-screen__img-top {
-            position: absolute;
-            width: 466.53px;
-            height: 429.98px;
-            left: calc(50% - 466.53px/2 - 480.67px);
-            top: calc(50% - 429.98px/2 + 380px);
-            // left: calc(50% - 466.53px/2 - 146.67px);
-            // top: calc(50% - 429.98px/2 + 92.31px);
-            background-image: url("../images/triple-left.png");
-        }
 
-        .triple-screen__img-top {
-            position: absolute;
-            width: 466.53px;
-            height: 429.98px;
-            left: calc(50% - 466.53px/2 + 230px);
-            top: calc(50% - 451.48px/2 + 380px);
-            // left: calc(50% - 466.53px/2 + 584px);
-            // top: calc(50% - 451.48px/2 + 76.47px);
-            background-image: url("../images/triple-right.png");
-        }
+    .triple-screen__img-top {
+        position: absolute;
+        width: 465.82px;
+        height: 429.98px;
+        left: calc(50% - 465px/2 - 138px);
+        top: calc(55% - 485px);
+
+        background-image: url("../images/triple-top.png");
+    }
 
 
-            // .img-top {
-            //     position: relative;
-            //     width: 465.82px;
-            //     height: 429.98px;
-            // }
+    .triple-screen__img-left {
+        position: absolute;
+        width: 466.53px;
+        height: 429.98px;
+        left: calc(50% - 465px/2 - 484px);
+        top: calc(55% - 200px);
+        // left: calc(50% - 466.53px/2 - 146.67px);
+        // top: calc(50% - 429.98px/2 + 92.31px);
+        background-image: url("../images/triple-left.png");
+    }
 
-
-            // .img-left {
-            //     position: relative;
-            //     width: 466.53px;
-            //     height: 429.98px;
-            // }
-
-            // .img-right {
-            //     position: relative;
-            //     width: 466.53px;
-            //     height: 429.98px;
-            // }
+    .triple-screen__img-right {
+        position: absolute;
+        width: 466.53px;
+        height: 429.98px;
+        left: calc(50% - 466.53px/2 + 220px);
+        top: calc(55% - 220px);
+        // left: calc(50% - 466.53px/2 + 584px);
+        // top: calc(50% - 451.48px/2 + 76.47px);
+        background-image: url("../images/triple-right.png");
+    }
 
     }
+
+.triple-screen__gradient {
+    position: absolute;
+    width: 100%;
+    height: 120px;
+    top: 90.1%;
+    background: utils.$background-gradient;
 }
-// .gradient {
-//     position: absolute;
-//     left: 0%;
-//     right: 0%;
-//     top: 67.1%;
-//     bottom: 0%;
-//     background: utils.$background-gradient;
-// }
