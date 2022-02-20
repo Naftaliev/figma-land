@@ -1,3 +1,10 @@
 section.features__section 
-    h3.features_heading Features
-    h2.features_subheading Most calendars are designed for teams. Slate is designed for <br> freelancers who want a simple way to plan their schedule.
+    h3.features__heading Features
+    h2.features__subheading Most calendars are designed for teams. Slate is designed for <br> freelancers who want a simple way to plan their schedule.
+    .features__main-container 
+        .features__img-container
+            +image('features/img-big')
+            .img-small
+              +image('features/img-small')
+        .features__list-container 
+            include ../featrs-list/featrs-list.pug

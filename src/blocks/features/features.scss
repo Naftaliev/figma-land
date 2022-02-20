@@ -3,10 +3,40 @@
 .features__section {
     position: relative;
     justify-content: space-around;
-    padding-top: 150px;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
 }
 
-h3.features__heading {
+.features__heading {
     margin-bottom: 27px;;
 }
+
+.features__subheading {
+    margin-bottom: 80px;;
+}
+
+.features__main-container {
+    display: flex;
+
+}
+
+.features__img-container {
+    width: 70%;
+}
+
+.img-small {
+    position: absolute;
+    bottom: -60px;
+    left: 45%;
+}
+
+
+.features__list-container {
+    width: 30%;
+}
+
+
 

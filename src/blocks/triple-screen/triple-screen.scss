@@ -72,7 +72,7 @@
 }
 
 .triple-screen__gradient-spacer {
-    height: 165px;
+    height: 265px;
     width: 100%;
 }
 
@@ -80,6 +80,6 @@
     position: absolute;
     width: 100%;
     height: 551px;
-    bottom: 0px;
+    bottom: 100px;
     background: utils.$background-gradient;
 }

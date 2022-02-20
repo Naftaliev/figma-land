@@ -10,5 +10,5 @@ mixin image-jpg(name)
 mixin image-common-jpg(name)
     img(src=require(`_src/images/${name}.jpg`) alt=name)
 
-mixin image-svg(name)
-    img(src=require(`./${name}.svg`) alt=name)
+mixin image-svg(pathAndName)
+    img(src=require(`_src/blocks/${pathAndName}.svg`) alt=name)
