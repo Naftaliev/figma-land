@@ -26,6 +26,7 @@ h3.whitecards__heading {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
     max-width: 475px;
     font-family: utils.$graphik;
     color: black;
@@ -39,8 +40,6 @@ h3.whitecards__heading {
 
     &--left{
         @extend .whitecards__card;
-        font-weight: 600;
-        font-family: utils.$graphik;
         
     }
 
@@ -60,7 +59,19 @@ h3.whitecards__heading {
         
 }
 
+.whitecards__card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
 .whitecards__button {
     background-color: utils.$button-blue;
 }
+
+.whitecard__img-right, .whitecard__img-left {
+
+}
+
 

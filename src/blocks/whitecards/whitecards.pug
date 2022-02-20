@@ -3,17 +3,20 @@ section.whitecards__section
     h2.whitecards__subheading We focus on ergonomics and meeting you where you work. It's only a keystroke away.
     .whitecards__card-container
         .whitecards__card--left
-            p.title  Work
-            p Ever wondered if you're too reliant on a client for work? Slate helps you identify .
+            .whitecards__card-content
+                p.title  Work
+                p Ever wondered if you're too reliant on a client for work? Slate helps you identify .
             .button.whitecards__button 
                 a(href='#') Sign up
-            .whitecard__notebook 
-                .whtecard__notebook-img
+            .whitecard__img-left
+                 +image('whitecards/img-left')
 
         .whitecards__card--right
-            p.title  Design with real data
-            p Ever wondered if you're too reliant on a client for work? Slate helps you identify. Try For Free
-            .button.whitecards__button 
-                a(href='#') Try for free
-            .whitecard__right-img
+            .whitecards__card-content
+                p.title  Design with real data
+                p Ever wondered if you're too reliant on a client for work? Slate helps you identify. Try For Free
+                .button.whitecards__button 
+                    a(href='#') Try for free
+            .whitecard__img-right
+                +image('whitecards/img-right')
             
