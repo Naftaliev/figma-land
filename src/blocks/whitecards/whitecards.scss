@@ -1,24 +1,66 @@
 @use '_src/styles/utils';
 
-.whitecards {
+.whitecards__section {
+    position: relative;
+    padding-top: 150px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+h3.whitecards__heading {
+    margin-bottom: 27px;;
+}
+
+.whitecards__card-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 56px;
+    padding-bottom: 52px;
+}
+
+.whitecards__card {
     position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-}
-
-.whitecard {
-    position: relative;
-    display: block;
-    max-width: 50%;
-    font-weight: 400;
+    align-items: center;
+    max-width: 475px;
     font-family: utils.$graphik;
+    color: black;
+    background-color: aliceblue;
+    border-radius: 10px;
+    border: 1px solid #D3D3D3;
+    box-sizing: border-box;
+    padding: 50px 45.5px 40px;
+    height: 620px;
+    /* shadow */
+
+    &--left{
+        @extend .whitecards__card;
+        font-weight: 600;
+        font-family: utils.$graphik;
+        
+    }
+
+    &--right{
+        @extend .whitecards__card;
+        margin-left: 30px;
+    }
+
+    p {
+        color: #5C5C5C;
+        margin: 30px;
+    }
+
+    p.title {
+        color: black;
+    }
         
 }
 
-.whitecard--left {
-    font-weight: 600;
-    font-family: utils.$graphik;
-    max-width: 50%;
-    
+.whitecards__button {
+    background-color: utils.$button-blue;
 }
+
