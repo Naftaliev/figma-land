@@ -24,6 +24,7 @@ module.exports = {
   devServer: {
     compress: true,
     port: 9000,
+    open: 'C:\Program Files\Firefox Developer Edition\firefox.exe'
   },
   resolve: {
     alias: {

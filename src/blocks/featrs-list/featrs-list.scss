@@ -1,0 +1,21 @@
+.featrs-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.featrs-list__element {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.featrs-list__heading {
+    display: inline-flex;
+    justify-content: flex-start;
+}
+
+.featrs-list__text {
+   text-align: left;
+}
