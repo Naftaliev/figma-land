@@ -3,6 +3,7 @@
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
+    padding-block: 60px;
 }
 
 .featrs-list__element {
@@ -14,8 +15,14 @@
 .featrs-list__heading {
     display: inline-flex;
     justify-content: flex-start;
+    text-align: left;
+
+    img {
+        width: 25px;
+    }
 }
 
 .featrs-list__text {
    text-align: left;
+   margin-top: 20px;
 }
