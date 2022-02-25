@@ -1,0 +1,34 @@
+.gallery {
+
+}
+
+.gallery__image-container {
+    display: flex;
+}
+
+.gallery__img-1 {
+    background-image: url("_src/blocks/gallery/img-1.png");
+}
+.gallery__img-2 {
+    background-image: url("_src/blocks/gallery/img-2.png");
+}
+.gallery__img-3 {
+    background-image: url("_src/blocks/gallery/img-3.png");
+}
+.gallery__img-4 {
+    background-image: url("_src/blocks/gallery/img-4.png");
+}
+.gallery__img-5 {
+    background-image: url("_src/blocks/gallery/img-5.png");
+}
+.gallery__img-6 {
+    background-image: url("_src/blocks/gallery/img-6.png");
+}
+.gallery__img-7 {
+    background-image: url("_src/blocks/gallery/img-7.png");
+}
+
+.gallery__img {
+    width: 150px;
+    height: 150px;
+}
