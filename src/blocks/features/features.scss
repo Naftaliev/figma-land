@@ -29,17 +29,18 @@
 
 .features__img-container {
     background-image: url("_src/blocks/features/img-big.png");
+    position: relative;
     background-repeat: no-repeat;
     background-size: contain;
     width: 70%;
 
 }
 
-.img-small {
+.features__img-small {
     background-image: url("_src/blocks/features/img-small.png");
     position: absolute;
-    top: 70%;
-    left: 560px;
+    top: 60%;
+    left: 40%;
     width: 400px;
     height: 276px;
 }
