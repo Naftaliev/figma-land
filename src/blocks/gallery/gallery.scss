@@ -1,10 +1,18 @@
 .gallery {
-
+ margin-top: 90px;
 }
 
+.gallery>h2 {
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
 .gallery__image-container {
     display: flex;
+    justify-content: center;
+    gap: 33px;
+    margin-top: 33px;
 }
+
 
 .gallery__img-1 {
     background-image: url("_src/blocks/gallery/img-1.png");
@@ -28,7 +36,12 @@
     background-image: url("_src/blocks/gallery/img-7.png");
 }
 
-.gallery__img {
-    width: 150px;
-    height: 150px;
+.gallery__img1 {
+    width: 225px;
+    height: 285px;
+}
+
+.gallery__img2 {
+    width: 395px;
+    height: 285px;
 }
